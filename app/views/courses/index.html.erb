@@ -1,1 +1,13 @@
 <h1>My Courses</h1>
+
+<% if @results != nil %>
+  <ul>
+  <% @results[:courses].each do |c| %>
+	  <p>name: <%= c[:name] %></p>
+	  <p>heading: <%= c[:heading] %></p>
+	  <br>
+  <% end %>
+  </ul>
+<% else %>
+  <p>No results yet</p>
+<% end %>
