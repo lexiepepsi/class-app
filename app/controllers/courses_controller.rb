@@ -11,7 +11,6 @@ class CoursesController < ApplicationController
 		request["accept"] = 'application/json'
 
 		response = http.request(request)
-		# puts response.read_body
 		@results = JSON.parse(response.body, symbolize_names: true)
 	end
 end

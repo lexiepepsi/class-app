@@ -1,13 +1,15 @@
-<h1>My Courses</h1>
+<h1>My Published Courses</h1>
 
 <% if @results != nil %>
   <ul>
   <% @results[:courses].each do |c| %>
-	  <p>name: <%= c[:name] %></p>
-	  <p>heading: <%= c[:heading] %></p>
-	  <br>
+  	<% if c[:is_published] %>
+	  	<p>name: <%= c[:name] %></p>
+	  	<p>heading: <%= c[:heading] %></p>
+	  	<br>
+	  <% end %>
   <% end %>
   </ul>
 <% else %>
-  <p>No results yet</p>
+  <p>No courses yet</p>
 <% end %>
