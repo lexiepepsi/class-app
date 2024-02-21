@@ -4,8 +4,16 @@
   <ul>
   <% @results[:courses].each do |c| %>
   	<% if c[:is_published] %>
-	  	<p>name: <%= c[:name] %></p>
-	  	<p>heading: <%= c[:heading] %></p>
+	  	<p><b>Course Name:</b> <%= c[:name] %></p>
+	  	<p><b>Heading:</b> <%= c[:heading] %></p>
+	  	<p><b>Enrolled Students:</b> </p>
+	  		<% if @student_results[c[:id]] != nil %>
+	  			<% @student_results[c[:id]].each do |s| %>
+	  				<p>Name: <%= s[:name] %></p>
+	  				<p>Email: <%= s[:email] %></p>
+	  				<br>
+	  			<% end %>
+	  		<% end %>
 	  	<br>
 	  <% end %>
   <% end %>
